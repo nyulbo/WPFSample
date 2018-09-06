@@ -17,8 +17,6 @@ namespace ProcessSample
 
                 Console.WriteLine(String.Format("_Total = {0} App = {1} {2}%\n", t, p, p / t * 100));
                 float currentCpuUsage = p / t * 100;
-
-
                 System.Threading.Thread.Sleep(1000);
 
                 if (currentCpuUsage >= 10)
