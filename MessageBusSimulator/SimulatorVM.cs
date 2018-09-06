@@ -42,8 +42,7 @@ namespace MessageBusSimulator
         public string Body { get; set; }
         public string ConsumerTag { get; set; }
         public string DeliveryTag { get; set; }
-    }
-   
+    }   
     class SimulatorVM : Notifier
     {
         private IEnumerable<MessageBusApi> messageBusApies;
