@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="MessageBusSimulator.UserControl.PerformanceCounter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessageBusSimulator.UserControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="206" d:DesignWidth="178">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="145" VerticalAlignment="Top" Width="148" Background="White" Margin="10,10,0,0">
+            <StackPanel Margin="10">
+                <TextBlock Text="Performance" FontWeight="Bold"  FontSize="16" HorizontalAlignment="Center" Margin="10" />
+                <TextBlock Text="CPU" />
+                <Border BorderThickness="1" BorderBrush="Black">
+                    <TextBlock x:Name="txtBlockCpu" />
+                </Border>
+                <TextBlock Text="Memory" />
+                <Border BorderThickness="1" BorderBrush="Black">
+                    <TextBlock x:Name="txtBlockMemory" Text="" />
+                </Border>
+            </StackPanel>
+        </Border>
+        <Button x:Name="btnEnd" Content="End" HorizontalAlignment="Left" Margin="99,160,0,0" VerticalAlignment="Top" Width="59" Click="btnEnd_Click" Height="20"/>
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Width="59" Click="btnStart_Click" Height="20"/>
+
+    </Grid>
+</UserControl>

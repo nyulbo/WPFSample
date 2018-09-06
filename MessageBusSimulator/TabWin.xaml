@@ -1,0 +1,34 @@
+﻿<Window x:Class="MessageBusSimulator.TabWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MessageBusSimulator"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="TabWin" Height="650" Width="900">
+    <Grid Margin="0,0,0,0" Height="Auto" Width="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="679*" />
+            <ColumnDefinition Width="213*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="596*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Publish" Click="OnPlusTabClick"/>
+                <MenuItem Header="Subscribe" Click="OnPlusTabClick" />
+                <MenuItem Header="Request" Click="OnPlusTabClick" />
+                <MenuItem Header="Reply" Click="OnPlusTabClick" />
+            </Menu>
+        </DockPanel>
+        <TabControl x:Name="mainTab" Grid.Row="1" Grid.Column="0">
+            <!--<TabItem Header="General">
+                <Frame Source="Publish.xaml" x:Name="mainFrame" Width="Auto" Height="Auto" NavigationUIVisibility="Hidden" Margin="5,5,5,5" />
+            </TabItem>-->
+        </TabControl>
+        <Frame VerticalAlignment="Top" Source="Performance.xaml" x:Name="pfFrame" Width="Auto" Height="Auto" NavigationUIVisibility="Hidden" Margin="5,5,5,5" Grid.Row="1" Grid.Column="1"/>
+    </Grid>
+</Window>

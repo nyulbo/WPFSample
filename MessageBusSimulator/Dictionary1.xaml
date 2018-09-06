@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MessageBusSimulator">
+    <!--XmlDataProvider is defined in a ResourceDictionary, 
+    such as Window.Resources-->
+    <XmlDataProvider x:Key="InventoryData" XPath="Books">
+        <x:XData>
+            <Books xmlns="">
+                <Book ISBN="0-7356-0562-9" Stock="in" Number="9">
+                    <Title>XML in Action</Title>
+                    <Summary>XML Web Technology</Summary>
+                </Book>
+                <Book ISBN="0-7356-1370-2" Stock="in" Number="8">
+                    <Title>Programming Microsoft Windows With C#</Title>
+                    <Summary>C# Programming using the .NET Framework</Summary>
+                </Book>
+                <Book ISBN="0-7356-1288-9" Stock="out" Number="7">
+                    <Title>Inside C#</Title>
+                    <Summary>C# Language Programming</Summary>
+                </Book>
+                <Book ISBN="0-7356-1377-X" Stock="in" Number="5">
+                    <Title>Introducing Microsoft .NET</Title>
+                    <Summary>Overview of .NET Technology</Summary>
+                </Book>
+                <Book ISBN="0-7356-1448-2" Stock="out" Number="4">
+                    <Title>Microsoft C# Language Specifications</Title>
+                    <Summary>The C# language definition</Summary>
+                </Book>
+            </Books>
+        </x:XData>
+    </XmlDataProvider>
+    <Style TargetType="ListViewItem">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+    </Style>
+
+    <DataTemplate x:Key="ISBNTemplate">
+        <TextBlock HorizontalAlignment="Center"
+               Text="{Binding XPath=@ISBN}"/>
+    </DataTemplate>
+    <DataTemplate x:Key="TitleTemplate">
+        <TextBlock HorizontalAlignment="Left"
+               Text="{Binding XPath=Title}"/>
+    </DataTemplate>
+    <DataTemplate x:Key="SummaryTemplate">
+        <TextBlock HorizontalAlignment="Left"
+               Text="{Binding XPath=Summary}"/>
+    </DataTemplate>
+</ResourceDictionary>
